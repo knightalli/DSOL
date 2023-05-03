@@ -137,12 +137,14 @@ public class Hero : MonoBehaviour
         lockLunge = true;
         Invoke("LungeLock", 0.7f);
 
-        if (sprite.flipX)
+        if (!facingRight)
         {
+            rb.velocity = new Vector2(0, rb.velocity.y);
             rb.AddForce(Vector2.left * lungeImpulse);
         }
         else
         {
+            rb.velocity = new Vector2(0, rb.velocity.y);
             rb.AddForce(Vector2.right * lungeImpulse);
         }
     }
