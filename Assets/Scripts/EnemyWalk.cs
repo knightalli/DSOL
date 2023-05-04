@@ -22,6 +22,7 @@ public class EnemyWalk : MonoBehaviour
 
     public void TakeDamage(int damage)
     {        
+        isHit = true;
         StartCoroutine(hitMoment());
         lifes -= damage;
         isHit = false;
@@ -100,7 +101,7 @@ public class EnemyWalk : MonoBehaviour
 
     private IEnumerator hitMoment()
     {
-        isHit = true;
+        //isHit = true;
         anima.SetInteger("int", 1);
         yield return new WaitForSecondsRealtime(2f);
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Hero : MonoBehaviour
     public int damage;
     private float timeBtwAttack;
 
+    public int numOfBattery;
+    public Sprite[] batteries;
+    [SerializeField] Image battery;
+    
+
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
@@ -32,6 +38,7 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        
     }
 
     private void Update()
@@ -68,9 +75,13 @@ public class Hero : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-    }
-      
+        if (lifes > numOfBattery)
+        {
+            lifes = numOfBattery;
+        }
+        battery.sprite = batteries[lifes];
+    }    
+    
 
     private void Attack()
     {
