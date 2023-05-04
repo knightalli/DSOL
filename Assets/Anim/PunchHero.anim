@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HurtDemonWalk
+  m_Name: PunchHero
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -17,45 +17,21 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: 21300000, guid: 8cda1728d9bb868419748fb3f3f723f0, type: 3}
-    - time: 0.35
-      value: {fileID: 21300000, guid: d116a430d5b79364db463ab634f31199, type: 3}
-    - time: 0.68333334
-      value: {fileID: 21300000, guid: c61a0a24d4ddc1c46b71cd6ad667276e, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: d0cdc51d17f750d4b8ed7a306e03ec58, type: 3}
-    attribute: m_Sprite
-    path: Square
-    classID: 212
-    script: {fileID: 0}
+  m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 3394203039
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 21300000, guid: 8cda1728d9bb868419748fb3f3f723f0, type: 3}
-    - {fileID: 21300000, guid: d116a430d5b79364db463ab634f31199, type: 3}
-    - {fileID: 21300000, guid: c61a0a24d4ddc1c46b71cd6ad667276e, type: 3}
-    - {fileID: 21300000, guid: d0cdc51d17f750d4b8ed7a306e03ec58, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
