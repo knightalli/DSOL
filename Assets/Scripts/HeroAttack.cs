@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroAttack : MonoBehaviour
 {
     private float timeBtwAttack;
-    private float startTimeBtwAttack;
+    [SerializeField]private float startTimeBtwAttack;
 
     public Transform attackPos;
     public LayerMask enemy;
@@ -15,6 +14,18 @@ public class HeroAttack : MonoBehaviour
 
     private void Update()
     {
-        animat.SetInteger("int", 0);
+        
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    //private IEnumerator hitMoment()
+    //{        
+    //    animat.SetInteger("state", 6);
+    //    yield return new WaitForSecondsRealtime(2f);
+    //}
 }

@@ -7,14 +7,21 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private int lifes = 10;
     [SerializeField] private float jumpForce = 20f;
-    [SerializeField]private bool isGrounded = false;
+    [SerializeField] private bool isGrounded = false;
+    [SerializeField] private float startTimeBtwAttack;
+
     private int jumpCount = 0;
     private int maxJumpCount = 2;
     private bool isHitted = false;
+    private bool isAttacked = false;
     private bool jumpControl = true;
     public static bool facingRight = true;
     public float dir;
-
+    public Transform attackPos;
+    public LayerMask enemy;
+    public float attackRange;
+    public int damage;
+    private float timeBtwAttack;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -29,17 +36,17 @@ public class Hero : MonoBehaviour
 
     private void Update()
     {
-        if (isGrounded) { anim.SetInteger("state", 0); }
+        if (isGrounded && !isAttacked && !isHitted) { anim.SetInteger("state", 0); }
 
         if (Input.GetButton("Horizontal"))
             Run();
 
         Jump();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !lockLunge)
-        {
-            Lunge();
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift) && !lockLunge)
+        //{
+        //    Lunge();
+        //}
 
         if (lifes < 0)
         {
@@ -51,11 +58,37 @@ public class Hero : MonoBehaviour
             StartCoroutine(damageMoment());
         }
 
+        if (Input.GetKey(KeyCode.K))
+        {
+            isAttacked = true;
+            StartCoroutine(attackMoment());
+        }
+
     }
 
     private void FixedUpdate()
     {
 
+    }
+      
+
+    private void Attack()
+    {
+        if (timeBtwAttack <= 0)
+        {            
+            anim.SetInteger("state", 6);
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
+            }
+
+            timeBtwAttack = startTimeBtwAttack;
+        }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
     }
 
     private void Run()
@@ -128,31 +161,31 @@ public class Hero : MonoBehaviour
         isGrounded = false;
     }
 
-    private bool lockLunge = false;
-    [SerializeField] private float lungeImpulse = 655f;
+    //private bool lockLunge = false;
+    //[SerializeField] private float lungeImpulse = 655f;
 
-    private void Lunge()
-    {
-        anim.SetInteger("state", 3);
-        lockLunge = true;
-        Invoke("LungeLock", 0.7f);
+    //private void Lunge()
+    //{
+    //    anim.SetInteger("state", 3);
+    //    lockLunge = true;
+    //    Invoke("LungeLock", 0.7f);
 
-        if (!facingRight)
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            rb.AddForce(Vector2.left * lungeImpulse);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            rb.AddForce(Vector2.right * lungeImpulse);
-        }
-    }
+    //    if (!facingRight)
+    //    {
+    //        rb.velocity = new Vector2(0, rb.velocity.y);
+    //        rb.AddForce(Vector2.left * lungeImpulse);
+    //    }
+    //    else
+    //    {
+    //        rb.velocity = new Vector2(0, rb.velocity.y);
+    //        rb.AddForce(Vector2.right * lungeImpulse);
+    //    }
+    //}
 
-    private void LungeLock()
-    {
-        lockLunge = false;
-    }
+    //private void LungeLock()
+    //{
+    //    lockLunge = false;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -163,6 +196,11 @@ public class Hero : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
 
     private IEnumerator sceneLoader()
     {
@@ -180,5 +218,13 @@ public class Hero : MonoBehaviour
         anim.SetInteger("state", 5);
         yield return new WaitForSecondsRealtime(1);
         isHitted = false;
+    }
+
+    private IEnumerator attackMoment()
+    {
+        anim.SetInteger("state", 6);
+        Attack();
+        yield return new WaitForSecondsRealtime(1f);        
+        isAttacked = false;
     }
 }

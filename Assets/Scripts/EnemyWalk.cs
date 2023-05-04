@@ -70,9 +70,7 @@ public class EnemyWalk : MonoBehaviour
                 Flip();
             }
         }
-    }
-    //гдеяэ мсфмн ярнкймнбемхе я сдюпнл!!
-
+    }  
 
     private IEnumerator punchMoment()
     {
@@ -104,7 +102,7 @@ public class EnemyWalk : MonoBehaviour
     {
         isHit = true;
         anima.SetInteger("int", 1);
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(2f);
     }
 
     void Flip()
