@@ -7,6 +7,7 @@ TagManager:
   - EnemyStay
   - EnemyWalk
   - Bullet
+  - Battery
   layers:
   - Default
   - TransparentFX

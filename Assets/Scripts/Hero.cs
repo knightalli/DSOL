@@ -160,6 +160,15 @@ public class Hero : MonoBehaviour
         jumpControl = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Battery"))
+        {
+            lifes++;
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
