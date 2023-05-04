@@ -7,7 +7,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private int lifes = 10;
     [SerializeField] private float jumpForce = 20f;
-    private bool isGrounded = false;
+    [SerializeField]private bool isGrounded = false;
     private int jumpCount = 0;
     private int maxJumpCount = 2;
     private bool isHitted = false;
@@ -166,6 +166,9 @@ public class Hero : MonoBehaviour
 
     private IEnumerator sceneLoader()
     {
+        if (!facingRight)
+            Flip();
+
         speed = 0;
         anim.SetInteger("state", 4);
         yield return new WaitForSecondsRealtime(1);
