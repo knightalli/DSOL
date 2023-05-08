@@ -55,7 +55,7 @@ public class Hero : MonoBehaviour
         //    Lunge();
         //}
 
-        if (lifes < 0)
+        if (lifes <= 0)
         {
             StartCoroutine(sceneLoader());
         }
@@ -91,6 +91,7 @@ public class Hero : MonoBehaviour
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
             for (int i = 0; i < enemies.Length; i++)
             {
+                enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
                 enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
             }
 
@@ -167,12 +168,17 @@ public class Hero : MonoBehaviour
             lifes++;
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Peaks"))
+        {
+            lifes = 0;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
-        jumpCount = 0;
+        jumpCount = 0;        
     }
 
 
