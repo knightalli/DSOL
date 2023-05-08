@@ -10,6 +10,7 @@ TagManager:
   - Battery
   - Peaks
   - Ground
+  - Table
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: 1
     uniqueID: 848727417
+    locked: 0
+  - name: 2
+    uniqueID: 2462785745
     locked: 0

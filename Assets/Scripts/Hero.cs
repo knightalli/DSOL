@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
+    [SerializeField] public static float speed = 7;
     [SerializeField] private int lifes = 10;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private bool isGrounded = false;
     [SerializeField] private float startTimeBtwAttack;
+    
 
     private int jumpCount = 0;
     private int maxJumpCount = 2;
@@ -180,6 +181,8 @@ public class Hero : MonoBehaviour
         {
             lifes = 0;
         }
+
+        
     }
 
     public void TakeDamage(int damage)
