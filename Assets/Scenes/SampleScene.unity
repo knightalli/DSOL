@@ -20201,6 +20201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 991444870645510249, guid: d9903e5f15a265946946e56b7ff99419, type: 3}
+      propertyPath: numberNextScene
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 991444870645510255, guid: d9903e5f15a265946946e56b7ff99419, type: 3}
       propertyPath: m_RootOrder
       value: 15
