@@ -103,7 +103,7 @@ MonoBehaviour:
   enemy:
     serializedVersion: 2
     m_Bits: 256
-  attackRange: 1.1
+  attackRange: 1.15
   damage: 5
   numOfBattery: 10
   batteries:

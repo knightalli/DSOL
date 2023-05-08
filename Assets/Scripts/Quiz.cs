@@ -9,7 +9,8 @@ public class Quiz : MonoBehaviour
     public int numberDialog = 0;
     public UnityEngine.UI.Button buttonTrue;
     public UnityEngine.UI.Button buttonFalse;
-    public bool haveKey = true;
+    [SerializeField] private bool answered = false;
+    [SerializeField] private GameObject door;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,14 +27,15 @@ public class Quiz : MonoBehaviour
             textAndQuestion.text = message[numberDialog];
         }
 
-        if (haveKey == false)
+        if (answered)
         {            
             GetComponent<CircleCollider2D>().enabled = false;
+            door.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
+    {        
         windowQuiz.SetActive(false);
         numberDialog = 0;
         buttonTrue.onClick.RemoveAllListeners();
@@ -46,13 +48,9 @@ public class Quiz : MonoBehaviour
         textAndQuestion.text = "Вы правы";
         buttonTrue.gameObject.SetActive(false);
         buttonFalse.gameObject.SetActive(false);
-        ChangeSprite();
-        if(haveKey)
-        {
-            haveKey = false;
-            //collision.GetComponent<Collider2D>().enabled = false;
-        }
-        //+ключ или что-то типо
+        ChangeBox();
+        ChangeDoor();
+        answered = true;
 
     }
 
@@ -64,10 +62,18 @@ public class Quiz : MonoBehaviour
         buttonFalse.gameObject.SetActive(false);
     }
 
-    public SpriteRenderer spriteRenderer;
-    public Sprite newSprite;
-    public void ChangeSprite()
+    public SpriteRenderer boxSpriteRenderer;
+    public Sprite boxNewSprite;
+    public void ChangeBox()
     {
-        spriteRenderer.sprite = newSprite;
+        boxSpriteRenderer.sprite = boxNewSprite;
+    }
+
+
+    public SpriteRenderer doorSpriteRenderer;
+    public Sprite doorNewSprite;
+    public void ChangeDoor()
+    {
+       doorSpriteRenderer.sprite = doorNewSprite;
     }
 }
