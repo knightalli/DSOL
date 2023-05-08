@@ -43,6 +43,14 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<EnemyWalk>().TakeDamage(damage);
             Destroy();
         }
+        else if (collision.CompareTag("EnemyStay"))
+        {
+            collision.gameObject.GetComponent<EnemyStay>().TakeDamage(damage);
+            Destroy();
+        }
+
+        if (collision.CompareTag("Ground"))
+            Destroy();
     }
 
     private void Destroy()

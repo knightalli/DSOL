@@ -1,24 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStay : MonoBehaviour
 {
-    
+
     [SerializeField] private Vector3[] positions;
     [SerializeField] private int lifes = 16;
+    [SerializeField] private GameObject player;
 
     private bool isPunch = false;
-    private bool isHit = false;
-    private bool isDeath = false;
+    public static bool isHit = false;
+    public static bool isDeath = false;
     private SpriteRenderer sprite;
     private Animator anima;
+    public static Vector3 theScale; 
 
 
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         anima = GetComponent<Animator>();
+        theScale = transform.localScale;
+        
     }
 
     public void TakeDamage(int damage)
@@ -41,7 +44,23 @@ public class EnemyStay : MonoBehaviour
 
     public void FixedUpdate()
     {
-        
+        if (!isHit && !isDeath)Turn();
+    }
+
+    private void Turn()
+    {
+        anima.SetInteger("int", 4);
+
+        if (transform.position.x - player.transform.position.x > 0)
+        {            
+            theScale.x = -1;
+            transform.localScale = theScale;
+        }
+        else if (transform.position.x - player.transform.position.x < 0)
+        {
+            theScale.x = 1;
+            transform.localScale = theScale;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,7 +72,7 @@ public class EnemyStay : MonoBehaviour
         }
     }
 
-    
+
 
     private IEnumerator punchMoment()
     {
@@ -66,8 +85,10 @@ public class EnemyStay : MonoBehaviour
     {
         isDeath = true;
         anima.SetInteger("int", 3);
+        
         yield return new WaitForSecondsRealtime(1);
         Destroy();
+
     }
 
     private IEnumerator hitMoment()
@@ -77,10 +98,5 @@ public class EnemyStay : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
     }
 
-    void Flip()
-    {
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
+    
 }

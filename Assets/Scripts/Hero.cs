@@ -27,7 +27,7 @@ public class Hero : MonoBehaviour
     public int numOfBattery;
     public Sprite[] batteries;
     [SerializeField] Image battery;
-    
+
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -38,7 +38,7 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        
+
     }
 
     private void Update()
@@ -80,19 +80,21 @@ public class Hero : MonoBehaviour
             lifes = numOfBattery;
         }
         battery.sprite = batteries[lifes];
-    }    
-    
+    }
+
 
     private void Attack()
     {
         if (timeBtwAttack <= 0)
-        {            
+        {
             anim.SetInteger("state", 6);
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(2,2), enemy);
             for (int i = 0; i < enemies.Length; i++)
             {
-                enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
-                enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
+                if (enemies[i].CompareTag("EnemyWalk"))
+                    enemies[i].GetComponent<EnemyWalk>().TakeDamage(damage);
+                else if (enemies[i].CompareTag("EnemyStay"))
+                    enemies[i].GetComponent<EnemyStay>().TakeDamage(damage);
             }
 
             timeBtwAttack = startTimeBtwAttack;
@@ -101,6 +103,11 @@ public class Hero : MonoBehaviour
         {
             timeBtwAttack -= Time.deltaTime;
         }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(attackPos.position, new Vector2(2,2));
     }
 
     private void Run()
@@ -175,10 +182,15 @@ public class Hero : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        lifes -= damage;
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
-        jumpCount = 0;        
+        jumpCount = 0;
     }
 
 
@@ -222,11 +234,7 @@ public class Hero : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
-    }
+   
 
     private IEnumerator sceneLoader()
     {
@@ -250,7 +258,7 @@ public class Hero : MonoBehaviour
     {
         anim.SetInteger("state", 6);
         Attack();
-        yield return new WaitForSecondsRealtime(1f);        
+        yield return new WaitForSecondsRealtime(1f);
         isAttacked = false;
     }
 }

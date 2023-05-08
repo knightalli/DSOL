@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6842606928994504130}
   - component: {fileID: 1037398484237050542}
   - component: {fileID: 4605548357481405942}
-  - component: {fileID: 1796594147852632729}
+  - component: {fileID: -6617497315102654688}
   - component: {fileID: 5869352619805726350}
   m_Layer: 0
   m_Name: EnemyWave
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc295f54898a5344691dc22a3a24345f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9711c8a189f200944853c5fde2c8dffe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0047875745}
   serializedVersion: 2
   m_Radius: 0.064787574
---- !u!114 &1796594147852632729
+--- !u!114 &-6617497315102654688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4577811244032397607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 552abe8e8a34bfb488d04dfee0edd9bf, type: 3}
+  m_Script: {fileID: 11500000, guid: df1dbb89e56692148b5c99793b803298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
   rb: {fileID: 5869352619805726350}
   damage: 2
+  speed: {x: 20, y: 20}
+  direction: {x: 1, y: 0}
+  movement: {x: 0, y: 0}
+  player: {fileID: 0}
+  fireRate: 0.5
 --- !u!50 &5869352619805726350
 Rigidbody2D:
   serializedVersion: 4
