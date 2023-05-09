@@ -11,6 +11,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private bool isGrounded = false;
     [SerializeField] private float startTimeBtwAttack;
 
+    public static bool closing = true;
     public static int step = 1;
 
 
@@ -74,7 +75,7 @@ public class Hero : MonoBehaviour
             StartCoroutine(attackMoment());
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && closing)
         {
             Application.Quit();
         }

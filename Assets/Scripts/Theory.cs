@@ -20,6 +20,7 @@ public class Theory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && canClose)
         {
             UnshowTheory();
+
         }
 
 
@@ -45,10 +46,12 @@ public class Theory : MonoBehaviour
     {
         TheoryImage.gameObject.SetActive(false);
         Hero.step = 1;
+        Hero.closing = true;
     }
 
     private void ShowTheory()
     {
+        Hero.closing = false;
         HelpImage.gameObject.SetActive(false);
         TheoryImage.gameObject.SetActive(true);
         Hero.step = 0;
