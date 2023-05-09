@@ -11,8 +11,6 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] private GameObject player;
 
     public float fireRate = 0.5f;
-    private float nextFire = 0.0f;
-
 
     public void Start()
     {

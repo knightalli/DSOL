@@ -11,17 +11,14 @@ public class EnemyStay : MonoBehaviour
     private bool isPunch = false;
     public static bool isHit = false;
     public static bool isDeath = false;
-    private SpriteRenderer sprite;
     private Animator anima;
     public static Vector3 theScale; 
 
 
     private void Awake()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
         anima = GetComponent<Animator>();
         theScale = transform.localScale;
-        
     }
 
     public void TakeDamage(int damage)
@@ -40,7 +37,7 @@ public class EnemyStay : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private int currentTarget;
+    
 
     public void FixedUpdate()
     {

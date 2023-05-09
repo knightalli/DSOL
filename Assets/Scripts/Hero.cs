@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] public static float speed = 7;
+    [SerializeField] private float speed = 7;
     [SerializeField] private int lifes = 10;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private bool isGrounded = false;
     [SerializeField] private float startTimeBtwAttack;
-    
+
+    public static int step = 1;
+
 
     private int jumpCount = 0;
     private int maxJumpCount = 2;
@@ -72,6 +74,11 @@ public class Hero : MonoBehaviour
             StartCoroutine(attackMoment());
         }
 
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 
     private void FixedUpdate()
@@ -89,7 +96,7 @@ public class Hero : MonoBehaviour
         if (timeBtwAttack <= 0)
         {
             anim.SetInteger("state", 6);
-            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(2,2), enemy);
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(2, 2), enemy);
             for (int i = 0; i < enemies.Length; i++)
             {
                 if (enemies[i].CompareTag("EnemyWalk"))
@@ -108,7 +115,7 @@ public class Hero : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos.position, new Vector2(2,2));
+        Gizmos.DrawWireCube(attackPos.position, new Vector2(2, 2));
     }
 
     private void Run()
@@ -117,7 +124,7 @@ public class Hero : MonoBehaviour
 
         dir = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(dir * speed, GetComponent<Rigidbody2D>().velocity.y);
+        rb.velocity = new Vector2(dir * speed * step, GetComponent<Rigidbody2D>().velocity.y);
 
         if (dir > 0 && !facingRight)
             Flip();
@@ -182,7 +189,7 @@ public class Hero : MonoBehaviour
             lifes = 0;
         }
 
-        
+
     }
 
     public void TakeDamage(int damage)
@@ -237,7 +244,7 @@ public class Hero : MonoBehaviour
         }
     }
 
-   
+
 
     private IEnumerator sceneLoader()
     {

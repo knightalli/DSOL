@@ -17,7 +17,7 @@ public class Theory : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && canClose)
+        if (Input.GetKeyDown(KeyCode.Escape) && canClose)
         {
             UnshowTheory();
         }
@@ -44,14 +44,14 @@ public class Theory : MonoBehaviour
     private void UnshowTheory ()
     {
         TheoryImage.gameObject.SetActive(false);
-        Hero.speed = 7;
+        Hero.step = 1;
     }
 
     private void ShowTheory()
     {
         HelpImage.gameObject.SetActive(false);
         TheoryImage.gameObject.SetActive(true);
-        Hero.speed = 0;
+        Hero.step = 0;
         canClose = true;
     }
         
