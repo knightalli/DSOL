@@ -5,9 +5,11 @@ using UnityEngine;
 public class Ladder : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
+    [SerializeField]private Animator anim;
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        anim.SetInteger("state", 7);
         other.GetComponent<Rigidbody2D>().gravityScale = 0;
         if (other.gameObject.CompareTag("Player"))
         {
