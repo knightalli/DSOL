@@ -74,12 +74,6 @@ public class Hero : MonoBehaviour
             isAttacked = true;
             StartCoroutine(attackMoment());
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && closing)
-        {
-            Application.Quit();
-        }
-
     }
 
     private void FixedUpdate()
