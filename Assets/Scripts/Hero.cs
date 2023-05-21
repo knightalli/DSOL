@@ -10,6 +10,8 @@ public class Hero : MonoBehaviour
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private bool isGrounded = false;
     [SerializeField] private float startTimeBtwAttack;
+    [SerializeField] private int numberScene;
+    
 
     public static bool closing = true;
     public static int step = 1;
@@ -249,7 +251,7 @@ public class Hero : MonoBehaviour
         speed = 0;
         anim.SetInteger("state", 4);
         yield return new WaitForSecondsRealtime(1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(numberScene);
     }
 
     private IEnumerator damageMoment()

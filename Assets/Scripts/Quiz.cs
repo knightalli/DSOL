@@ -25,13 +25,7 @@ public class Quiz : MonoBehaviour
 
             windowQuiz.SetActive(true);
             textAndQuestion.text = message[numberDialog];
-        }
-
-        if (answered)
-        {            
-            GetComponent<CircleCollider2D>().enabled = false;
-            door.GetComponent<BoxCollider2D>().enabled = false;
-        }
+        }        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -40,6 +34,12 @@ public class Quiz : MonoBehaviour
         numberDialog = 0;
         buttonTrue.onClick.RemoveAllListeners();
         buttonFalse.onClick.RemoveAllListeners();
+
+        if (answered)
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            door.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     public void TrueDialog()

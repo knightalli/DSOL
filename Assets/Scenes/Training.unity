@@ -3133,10 +3133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 705016035156108798, guid: 6aed17eae68f9ba4299cf9bda19a1a08, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -777.99994
-      objectReference: {fileID: 0}
     - target: {fileID: 705016035268888330, guid: 6aed17eae68f9ba4299cf9bda19a1a08, type: 3}
       propertyPath: m_Name
       value: HealthAndKey

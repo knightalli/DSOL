@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
@@ -9,6 +8,8 @@ public class EnemyWeapon : MonoBehaviour
     public Transform shootPos;
     public float fireRate = 1;
     [SerializeField] private Animator anima;
+    [SerializeField] private GameObject enemy;
+
 
     float elapsedTime = 0.0f;
 
@@ -33,7 +34,7 @@ public class EnemyWeapon : MonoBehaviour
     //        {
     //            elapsedTime = 0.0f;
     //            StartCoroutine(ToDamage());
-                
+
     //        }
     //    }
     //}
@@ -48,27 +49,20 @@ public class EnemyWeapon : MonoBehaviour
 
     private IEnumerator ToDamage()
     {
-        anima.SetInteger("int", 5);
-        
-            //anima.SetInteger("int", 5);
-            Vector3 direction = shootPos.position;
-            Rigidbody2D clone = Instantiate(bullet, shootPos.position, Quaternion.identity) as Rigidbody2D;
+        Vector3 direction = shootPos.position;
+        Rigidbody2D clone = Instantiate(bullet, shootPos.position, Quaternion.identity) as Rigidbody2D;
 
-            if (EnemyStay.theScale.x == 1)
-            {
-                clone.velocity = transform.TransformDirection(shootPos.right * speed);
-                clone.transform.right = shootPos.right;
-            }
-            else if (EnemyStay.theScale.x == -1)
-            {
-                clone.velocity = transform.TransformDirection(-shootPos.right * speed);
-                clone.transform.right = -shootPos.right;
-            }
+        if (enemy.transform.localScale.x == 1)
+        {
+            clone.velocity = transform.TransformDirection(shootPos.right * speed);
+            clone.transform.right = shootPos.right;
+        }
+        else if (enemy.transform.localScale.x == -1)
+        {
+            clone.velocity = transform.TransformDirection(-shootPos.right * speed);
+            clone.transform.right = -shootPos.right;
+        }
 
-            
-            yield return new WaitForSeconds(1f);
-            
-        
-        
+        yield return new WaitForSeconds(1f);
     }
 }
