@@ -9,10 +9,11 @@ public class Ladder : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        anim.SetInteger("state", 7);
-        other.GetComponent<Rigidbody2D>().gravityScale = 0;
+        
         if (other.gameObject.CompareTag("Player"))
         {
+            anim.SetInteger("state", 7);
+            other.GetComponent<Rigidbody2D>().gravityScale = 0;
             if (Input.GetKey(KeyCode.W))
             {
                 other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
