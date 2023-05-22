@@ -313,6 +313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8473388138770138314, guid: ee1f82b0a8ce26349a68c77dcb809791, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: -6662947329555798748, guid: ee1f82b0a8ce26349a68c77dcb809791, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -2681,6 +2685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3971254269361826648, guid: ee1f82b0a8ce26349a68c77dcb809791, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: -3558592245942536822, guid: ee1f82b0a8ce26349a68c77dcb809791, type: 3}
       propertyPath: m_TagString
       value: Ground
@@ -3545,11 +3553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2483898040757145000, guid: d4d1068212f71a941b77df55686e6f79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.29
+      value: 67.18
       objectReference: {fileID: 0}
     - target: {fileID: 2483898040757145000, guid: d4d1068212f71a941b77df55686e6f79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 2483898040757145000, guid: d4d1068212f71a941b77df55686e6f79, type: 3}
       propertyPath: m_LocalPosition.z
