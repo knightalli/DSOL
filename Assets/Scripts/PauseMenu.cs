@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         pause.SetActive(false);
         load.SetActive(false);
     }
@@ -75,4 +75,6 @@ public class PauseMenu : MonoBehaviour
         load.SetActive(false);
         pause.SetActive(true);
     }
+
+    
 }
