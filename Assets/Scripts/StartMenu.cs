@@ -33,17 +33,17 @@ public class StartMenu : MonoBehaviour
 
     public void LevelOne()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LevelOne");
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("LevelTwo");
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("LevelThree");
     }
 
     public void Back()
@@ -54,7 +54,7 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Training");
     }
 
     public void ExitGame()

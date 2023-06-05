@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 1743330981466486079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6892079, y: 2.1374998, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1743330982442086961}
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 74}
-  m_SizeDelta: {x: 316.5912, y: 30}
+  m_AnchoredPosition: {x: -2.5362, y: 30.5645}
+  m_SizeDelta: {x: 244.2659, y: 45.9499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1743330981466486067
 CanvasRenderer:
@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1743330981466486066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1743330981972452589
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +297,7 @@ RectTransform:
   m_GameObject: {fileID: 1743330981994094809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0999978, y: 2.0625, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1743330981972452590}
@@ -294,8 +306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -234}
-  m_SizeDelta: {x: 316.5912, y: 30}
+  m_AnchoredPosition: {x: -3.9221, y: -100.1078}
+  m_SizeDelta: {x: 298.8257, y: 55.7947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1743330981994094813
 CanvasRenderer:
@@ -419,7 +431,7 @@ RectTransform:
   m_GameObject: {fileID: 1743330982125444972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2555428, y: 2.3181314, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1743330982803511337}
@@ -428,8 +440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 193}
-  m_SizeDelta: {x: 316.5912, y: 30}
+  m_AnchoredPosition: {x: 1.4066, y: 84.939}
+  m_SizeDelta: {x: 309.4827, y: 48.043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1743330982125444960
 CanvasRenderer:
@@ -736,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

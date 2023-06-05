@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -479,7 +479,7 @@ RectTransform:
   m_GameObject: {fileID: 3855849127949264490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6892079, y: 2.1374998, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3855849128583029092}
@@ -488,8 +488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1722, y: 31.7799}
-  m_SizeDelta: {x: 260.7221, y: 252.308}
+  m_AnchoredPosition: {x: 0.1722, y: 14.743}
+  m_SizeDelta: {x: 185.5518, y: 228.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3855849127949264486
 CanvasRenderer:
@@ -572,7 +572,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3855849127949264487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: LevelTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3855849128392215609
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +613,7 @@ RectTransform:
   m_GameObject: {fileID: 3855849128392215609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.071473, y: 2.3181314, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3855849127182846844}
@@ -610,8 +622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -621.0781, y: 32.236206}
-  m_SizeDelta: {x: 412.3966, y: 234.2712}
+  m_AnchoredPosition: {x: -259.2491, y: 14.7426}
+  m_SizeDelta: {x: 183.8313, y: 228.1347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3855849128392215605
 CanvasRenderer:
@@ -696,8 +708,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: PauseOff
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: LevelOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -870,7 +882,7 @@ RectTransform:
   m_GameObject: {fileID: 3855849128527704972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0999978, y: 2.0625, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3855849128516057019}
@@ -879,8 +891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 635.9575, y: 33.394066}
-  m_SizeDelta: {x: 207.0001, y: 261.9974}
+  m_AnchoredPosition: {x: 264.20465, y: 14.743}
+  m_SizeDelta: {x: 184.3296, y: 228.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3855849128527704968
 CanvasRenderer:
@@ -965,8 +977,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Menu
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: LevelThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1139,7 +1151,7 @@ RectTransform:
   m_GameObject: {fileID: 8898853239110952959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0999978, y: 2.0625, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4439563546108301931}
@@ -1148,8 +1160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.0779, y: -318.4492}
-  m_SizeDelta: {x: 148.2866, y: 35.9647}
+  m_AnchoredPosition: {x: 3.2305, y: -134.7195}
+  m_SizeDelta: {x: 132.8087, y: 41.1999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3158813292399817838
 CanvasRenderer:
@@ -1234,8 +1246,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Menu
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

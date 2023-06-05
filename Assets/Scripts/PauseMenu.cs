@@ -6,11 +6,13 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject pause;
     [SerializeField] GameObject load;
+    [SerializeField] GameObject start;
     private bool Loading = false;
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        Time.timeScale = 1;
         pause.SetActive(false);
         load.SetActive(false);
     }
@@ -43,7 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Start");
         Time.timeScale = 1;
     }
 
@@ -57,17 +59,17 @@ public class PauseMenu : MonoBehaviour
 
     public void LevelOne()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LevelOne");
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("LevelTwo");
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("LevelThree");
     }
 
     public void Back()
@@ -77,4 +79,5 @@ public class PauseMenu : MonoBehaviour
     }
 
     
+
 }
