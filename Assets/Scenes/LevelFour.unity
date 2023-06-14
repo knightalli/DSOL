@@ -2706,6 +2706,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 2477006467463886670, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477006467463886670, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728476361099674322, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728476361099674322, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728476361099674322, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296658191060555919, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1742612373}
+    - target: {fileID: 6296658191060555919, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894541484471259121, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894541484471259121, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894541484471259121, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229935074045036572, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1742612374}
+    - target: {fileID: 8229935074045036572, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145760781788905769, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145760781788905769, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b51ce2c92b94954ca3dade223de227b, type: 3}
 --- !u!1 &1321675379 stripped
@@ -3193,6 +3249,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 987d49ad1164d664790501191f3dc692, type: 3}
+--- !u!114 &1742612373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 348283601, guid: 987d49ad1164d664790501191f3dc692, type: 3}
+  m_PrefabInstance: {fileID: 1742612372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202fa921450ff61409db39af90086c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1742612374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1415582195, guid: 987d49ad1164d664790501191f3dc692, type: 3}
+  m_PrefabInstance: {fileID: 1742612372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202fa921450ff61409db39af90086c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1859742549
 PrefabInstance:
   m_ObjectHideFlags: 0
