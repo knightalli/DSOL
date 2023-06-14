@@ -11,6 +11,7 @@ TagManager:
   - Peaks
   - Ground
   - Table
+  - Audio
   layers:
   - Default
   - TransparentFX

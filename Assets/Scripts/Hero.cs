@@ -11,7 +11,6 @@ public class Hero : MonoBehaviour
     [SerializeField] private bool isGrounded = false;
     [SerializeField] private float startTimeBtwAttack;
     [SerializeField] private int numberScene;
-    
 
     public static bool closing = true;
     public static int step = 1;
@@ -38,13 +37,14 @@ public class Hero : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
+    AudioManager audioManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -92,6 +92,7 @@ public class Hero : MonoBehaviour
     {
         if (timeBtwAttack <= 0)
         {
+            audioManager.PlaySFX(audioManager.shortShoot);
             anim.SetInteger("state", 6);
             Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(2, 2), enemy);
             for (int i = 0; i < enemies.Length; i++)
@@ -153,12 +154,14 @@ public class Hero : MonoBehaviour
             {
                 if (isGrounded)
                 {
+                    audioManager.PlaySFX(audioManager.jump);
                     anim.SetInteger("state", 2);
                     rb.velocity = new Vector2(rb.velocity.x, 0);
                     rb.AddForce(Vector2.up * jumpForce);
                 }
                 else if (++jumpCount < maxJumpCount)
                 {
+                    audioManager.PlaySFX(audioManager.jump);
                     anim.SetInteger("state", 2);
                     rb.velocity = new Vector2(0, 15);
                 }

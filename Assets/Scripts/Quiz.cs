@@ -25,20 +25,23 @@ public class Quiz : MonoBehaviour
 
             windowQuiz.SetActive(true);
             textAndQuestion.text = message[numberDialog];
-        }        
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {        
-        windowQuiz.SetActive(false);
-        numberDialog = 0;
-        buttonTrue.onClick.RemoveAllListeners();
-        buttonFalse.onClick.RemoveAllListeners();
-
-        if (answered)
+    {
+        if (collision.tag == "Player")
         {
-            GetComponent<CircleCollider2D>().enabled = false;
-            door.GetComponent<BoxCollider2D>().enabled = false;
+            windowQuiz.SetActive(false);
+            numberDialog = 0;
+            buttonTrue.onClick.RemoveAllListeners();
+            buttonFalse.onClick.RemoveAllListeners();
+
+            if (answered)
+            {
+                GetComponent<CircleCollider2D>().enabled = false;
+                door.GetComponent<BoxCollider2D>().enabled = false;
+            }
         }
     }
 
@@ -74,6 +77,6 @@ public class Quiz : MonoBehaviour
     public Sprite doorNewSprite;
     public void ChangeDoor()
     {
-       doorSpriteRenderer.sprite = doorNewSprite;
+        doorSpriteRenderer.sprite = doorNewSprite;
     }
 }
